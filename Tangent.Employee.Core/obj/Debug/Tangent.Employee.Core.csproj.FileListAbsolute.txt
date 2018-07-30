@@ -1,0 +1,8 @@
+/Users/benmutondo/Projects/Tangent.Employee/Tangent.Employee.Core/bin/Debug/Tangent.Employee.Core.dll
+/Users/benmutondo/Projects/Tangent.Employee/Tangent.Employee.Core/bin/Debug/Tangent.Employee.Core.pdb
+/Users/benmutondo/Projects/Tangent.Employee/Tangent.Employee.Core/bin/Debug/Newtonsoft.Json.dll
+/Users/benmutondo/Projects/Tangent.Employee/Tangent.Employee.Core/bin/Debug/Newtonsoft.Json.xml
+/Users/benmutondo/Projects/Tangent.Employee/Tangent.Employee.Core/obj/Debug/Tangent.Employee.Core.csprojResolveAssemblyReference.cache
+/Users/benmutondo/Projects/Tangent.Employee/Tangent.Employee.Core/obj/Debug/Tangent.Employee.Core.csproj.CoreCompileInputs.cache
+/Users/benmutondo/Projects/Tangent.Employee/Tangent.Employee.Core/obj/Debug/Tangent.Employee.Core.dll
+/Users/benmutondo/Projects/Tangent.Employee/Tangent.Employee.Core/obj/Debug/Tangent.Employee.Core.pdb

@@ -1,0 +1,29 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tangent.Employee.Core", "Tangent.Employee.Core\Tangent.Employee.Core.csproj", "{AC558BD6-6732-445B-8796-FCC60A3B4C24}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tangent.Employee.Droid", "Tangent.Employee.Droid\Tangent.Employee.Droid.csproj", "{E7CF91A9-23B8-45C1-8469-59FF0FE82CDD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tangent.Employee.Test", "Tangent.Employee.Test\Tangent.Employee.Test.csproj", "{083F2547-F459-477A-B4D7-4002BF833D48}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AC558BD6-6732-445B-8796-FCC60A3B4C24}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{AC558BD6-6732-445B-8796-FCC60A3B4C24}.Debug|x86.Build.0 = Debug|Any CPU
+		{AC558BD6-6732-445B-8796-FCC60A3B4C24}.Release|x86.ActiveCfg = Release|Any CPU
+		{AC558BD6-6732-445B-8796-FCC60A3B4C24}.Release|x86.Build.0 = Release|Any CPU
+		{E7CF91A9-23B8-45C1-8469-59FF0FE82CDD}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{E7CF91A9-23B8-45C1-8469-59FF0FE82CDD}.Debug|x86.Build.0 = Debug|Any CPU
+		{E7CF91A9-23B8-45C1-8469-59FF0FE82CDD}.Release|x86.ActiveCfg = Release|Any CPU
+		{E7CF91A9-23B8-45C1-8469-59FF0FE82CDD}.Release|x86.Build.0 = Release|Any CPU
+		{083F2547-F459-477A-B4D7-4002BF833D48}.Debug|x86.ActiveCfg = Debug|x86
+		{083F2547-F459-477A-B4D7-4002BF833D48}.Debug|x86.Build.0 = Debug|x86
+		{083F2547-F459-477A-B4D7-4002BF833D48}.Release|x86.ActiveCfg = Release|x86
+		{083F2547-F459-477A-B4D7-4002BF833D48}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,19 @@
+﻿<Properties StartupConfiguration="{083F2547-F459-477A-B4D7-4002BF833D48}|Default">
+  <MonoDevelop.Ide.ItemProperties.Tangent.Employee.Test PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Tangent.Employee.Core/Services/Implementation/UserService.cs">
+    <Files>
+      <File FileName="Tangent.Employee.Droid/Activities/MainActivity.cs" Line="20" Column="1" />
+      <File FileName="Tangent.Employee.Test/Program.cs" Line="16" Column="1" />
+      <File FileName="Tangent.Employee.Core/Helpers/Constant.cs" Line="7" Column="36" />
+      <File FileName="Tangent.Employee.Core/Services/Implementation/UserService.cs" Line="29" Column="61" />
+      <File FileName="Tangent.Employee.Core/Services/Interface/IUserService.cs" Line="12" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.Tangent.Employee.Droid PreferredExecutionTarget="Android.Nexus_6_API_22" />
+</Properties>
