@@ -93,6 +93,7 @@
     <Compile Include="Activities\MainActivity.cs" />
     <Compile Include="Activities\LoginActivity.cs" />
     <Compile Include="Application\TangentEmployeeApplication.cs" />
+    <Compile Include="Utils\Helpers.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -117,6 +118,7 @@
     <Folder Include="Resources\drawable\" />
     <Folder Include="Activities\" />
     <Folder Include="Application\" />
+    <Folder Include="Utils\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Tangent.Employee.Core\Tangent.Employee.Core.csproj">
