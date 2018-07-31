@@ -4,7 +4,7 @@ using Android.OS;
 
 namespace Tangent.Employee.Droid
 {
-    [Activity(Label = "Tangent.Employee.Droid", MainLauncher = true)]
+    [Activity(Label = "Tangent.Employee.Droid")]
     public class MainActivity : Activity
     {
         protected override void OnCreate(Bundle savedInstanceState)
