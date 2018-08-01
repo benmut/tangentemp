@@ -33,6 +33,11 @@
     <Compile Include="Services\Interface\IUserService.cs" />
     <Compile Include="Models\Token.cs" />
     <Compile Include="Services\Implementation\UserService.cs" />
+    <Compile Include="Services\Interface\IEmployeeService.cs" />
+    <Compile Include="Services\Implementation\EmployeeService.cs" />
+    <Compile Include="Models\Employee.cs" />
+    <Compile Include="Models\User.cs" />
+    <Compile Include="Models\Position.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
