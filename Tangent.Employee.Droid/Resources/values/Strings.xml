@@ -7,4 +7,6 @@
     <string name="permission_denied_title">Permission denied</string>
     <string name="txt_loggin_in">Authenticating...</string>
     <string name="txt_ok">OK</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
 </resources>
