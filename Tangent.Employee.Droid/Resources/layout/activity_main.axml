@@ -14,7 +14,7 @@
             layout="@layout/toolbar" />
     <!-- Actual content of the screen -->
         <FrameLayout
-            android:id="@+id/content_frame"
+            android:id="@+id/maincontent"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_centerInParent="true"

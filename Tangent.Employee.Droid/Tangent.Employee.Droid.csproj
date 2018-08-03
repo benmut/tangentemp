@@ -106,6 +106,8 @@
     <Compile Include="Activities\LoginActivity.cs" />
     <Compile Include="Application\TangentEmployeeApplication.cs" />
     <Compile Include="Utils\Helpers.cs" />
+    <Compile Include="Adapters\DashboardAdapter.cs" />
+    <Compile Include="Fragments\DashboardFragment.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -125,6 +127,8 @@
     <AndroidResource Include="Resources\layout\nav_header_main.axml" />
     <AndroidResource Include="Resources\values\Dimens.xml" />
     <AndroidResource Include="Resources\mipmap\tangent_icon.png" />
+    <AndroidResource Include="Resources\layout\fragment_dashboard.axml" />
+    <AndroidResource Include="Resources\layout\item_dashboard.axml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\mipmap-hdpi\" />
@@ -139,6 +143,7 @@
     <Folder Include="Fragments\" />
     <Folder Include="Resources\menu\" />
     <Folder Include="Resources\mipmap\" />
+    <Folder Include="Adapters\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Tangent.Employee.Core\Tangent.Employee.Core.csproj">
