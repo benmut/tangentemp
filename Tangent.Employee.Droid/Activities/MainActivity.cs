@@ -48,7 +48,12 @@ namespace Tangent.Employee.Droid
 
             SetupNavigationDrawer();
 
-            ReplaceFragment(DashboardFragment.NewInstance(_employeeService, OnTileSelected));
+            SupportFragmentManager
+                .BeginTransaction()
+                .Replace(Resource.Id.maincontent, DashboardFragment.NewInstance(_employeeService, OnTileSelected))
+                .Commit();
+
+            //ReplaceFragment(DashboardFragment.NewInstance(_employeeService, OnTileSelected));
         }
 
         private void IocContainterGetInstances()

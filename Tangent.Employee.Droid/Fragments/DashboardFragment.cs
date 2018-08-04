@@ -23,6 +23,7 @@ namespace Tangent.Employee.Droid.Fragments
         TextView _tvFullname;
         TextView _tvGreeting;
         GridView _gridView;
+        DashboardAdapter _adapter;
         ProgressBar _pbLoadingIndicator;
 
         IEmployeeService _employeeService; 
@@ -35,9 +36,6 @@ namespace Tangent.Employee.Droid.Fragments
         public override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-
-            _employeeDictionary = new Dictionary<string, List<Core.Models.Employee>>();
-            _items = new List<DashboardItem>();
         }
 
         public static Fragment NewInstance(IEmployeeService employeeService, Action<List<Core.Models.Employee>> onTileSelected)
@@ -66,9 +64,12 @@ namespace Tangent.Employee.Droid.Fragments
             base.OnViewCreated(view, savedInstanceState);
             (this.Activity as MainActivity).SetCustomTitle("Dashboard");
 
+            _employeeDictionary = new Dictionary<string, List<Core.Models.Employee>>();
+            _items = new List<DashboardItem>();
+
             _pbLoadingIndicator.Visibility = ViewStates.Visible;
             var employees = await _employeeService.GetAllEmployeesAsync(AccessToken);
-            if(employees == null)
+            if (employees == null)
             {
                 ShowErrorDialog();
                 return;
@@ -81,7 +82,6 @@ namespace Tangent.Employee.Droid.Fragments
             var backEnds = await _employeeService.GetEmployeePosition(employees, "Back-end Developer");
             var projectManagers = await _employeeService.GetEmployeePosition(employees, "Project Manager");
 
-            _employeeDictionary.Clear();
             _employeeDictionary.Add("Employees", employees.ToList());
             _employeeDictionary.Add("Birthdays", birthdays.ToList());
             _employeeDictionary.Add("Males", males.ToList());
@@ -97,20 +97,26 @@ namespace Tangent.Employee.Droid.Fragments
                 _items.Add(new DashboardItem()
                 {
                     Name = _employeeDictionary.ElementAt(i).Key,
-                    Value = _employeeDictionary[_key].Count.ToString()                                 
+                    Value = _employeeDictionary[_key].Count.ToString()
                 });
             }
 
             _pbLoadingIndicator.Visibility = ViewStates.Gone;
 
-            _gridView.Adapter = new DashboardAdapter(_items);
+            _adapter = new DashboardAdapter(_items);
+            _gridView.Adapter = _adapter;
             _gridView.ItemClick += GridView_ItemClick;
-
         }
 
         public override void OnResume()
         {
             base.OnResume();
+        }
+
+        public override void OnDetach()
+        {
+            base.OnDetach();
+            _tileSelectHandler = null;
         }
 
         void GridView_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
