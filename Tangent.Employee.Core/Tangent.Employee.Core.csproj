@@ -39,6 +39,8 @@
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\Position.cs" />
     <Compile Include="Models\DashboardItem.cs" />
+    <Compile Include="Services\Interface\IProfileService.cs" />
+    <Compile Include="Services\Implementation\ProfileService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
