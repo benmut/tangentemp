@@ -9,5 +9,7 @@
     <string name="txt_ok">OK</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-        <string name="view_details"><u>View Details</u></string>
+    <string name="view_details"><u>View Details</u></string>
+    <string name="error_retrieving_employees">Error retrieving employees</string>
+    <string name="error_title">Error</string>
 </resources>
