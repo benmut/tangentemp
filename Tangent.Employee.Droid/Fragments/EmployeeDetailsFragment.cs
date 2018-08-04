@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,24 +10,32 @@ using Android.Runtime;
 using Android.Util;
 using Android.Views;
 using Android.Widget;
+using Tangent.Employee.Droid.Extentions;
 
 namespace Tangent.Employee.Droid.Fragments
 {
-    public class EmployeeDetailsFragment : Fragment
+    public class EmployeeDetailsFragment : BaseFragment
     {
+        readonly string TAG = typeof(EmployeeDetailsFragment).FullName;
+
         public override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
 
-            // Create your fragment here
         }
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
-            // Use this to return your custom view for this Fragment
-            // return inflater.Inflate(Resource.Layout.YourFragment, container, false);
+            View view = inflater.Inflate(Resource.Layout.fragment_employee_details, container, false);
 
-            return base.OnCreateView(inflater, container, savedInstanceState);
+
+            return view;
+        }
+
+        public override void OnViewCreated(View view, Bundle savedInstanceState)
+        {
+            base.OnViewCreated(view, savedInstanceState);
+            (this.Activity as MainActivity).SetCustomTitle("Employee Details");
         }
     }
 }
