@@ -69,7 +69,7 @@ namespace Tangent.Employee.Droid.Adapters
                 Color.ParseColor("#F02E2E")
             };
 
-            if (position <= colors.Length)
+            if (position < colors.Length)
             {
                 return colors[position];
             }
