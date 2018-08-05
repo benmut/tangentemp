@@ -78,6 +78,10 @@ namespace Tangent.Employee.Droid.Fragments
                 return;
             }
 
+            var firstName = UserProfileSingleton.Instance.GetUserProfile().User.FirstName;
+            var lastName = UserProfileSingleton.Instance.GetUserProfile().User.LastName;
+            _tvFullname.Text = $"Hello {firstName} {lastName}";
+
             var birthdays = await _employeeService.GetBirthdays(employees);
             var males = await _employeeService.GetEmployeeByGender(employees, "M");
             var females = await _employeeService.GetEmployeeByGender(employees, "F");
@@ -146,6 +150,5 @@ namespace Tangent.Employee.Droid.Fragments
         {
             Helpers.ShowDialog(Activity, GetString(Resource.String.error_title), GetString(Resource.String.error_retrieving_employees));
         }
-
     }
 }
