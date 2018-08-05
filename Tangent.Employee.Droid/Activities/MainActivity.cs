@@ -14,6 +14,7 @@ using System;
 using Tangent.Employee.Core.Services.Implementation;
 using System.Collections.Generic;
 using Tangent.Employee.Core.Models;
+using Android.Support.V4.View;
 
 namespace Tangent.Employee.Droid
 {
@@ -25,6 +26,7 @@ namespace Tangent.Employee.Droid
         private DrawerLayout _drawer;
         private ActionBarDrawerToggle _drawerToggle;
         private Toolbar _toolBar;
+        private NavigationView _navigationView;
 
         IEmployeeService _employeeService;
 
@@ -44,7 +46,7 @@ namespace Tangent.Employee.Droid
             IocContainterGetInstances();
 
             _drawer = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
-            var _navigationView = FindViewById<NavigationView>(Resource.Id.nav_view);
+            _navigationView = FindViewById<NavigationView>(Resource.Id.nav_view);
             _toolBar = FindViewById<Toolbar>(Resource.Id.toolbar);
 
             SetupNavigationDrawer();
@@ -71,7 +73,32 @@ namespace Tangent.Employee.Droid
             _drawerToggle.DrawerIndicatorEnabled = true;
             _drawer.AddDrawerListener(_drawerToggle);
             _drawerToggle.SyncState(); 
+
+            _navigationView.NavigationItemSelected += OnNavigationViewItemSelected;
         }
+
+        void OnNavigationViewItemSelected(object sender, NavigationView.NavigationItemSelectedEventArgs e)
+        {
+            Fragment fragment = null;
+
+            switch (e.MenuItem.ItemId)
+            {
+                case Resource.Id.nav_dashboard:
+                    fragment = DashboardFragment.NewInstance(_employeeService, onEmployeeTypeSelected, onReviewTileSelected);
+                    break;
+                case Resource.Id.my_profile:
+                    fragment = new UserProfileFragment();
+                    break;
+            }
+
+            if (fragment != null)
+            {
+                ReplaceFragment(fragment);
+            }
+
+            _drawer.CloseDrawer(GravityCompat.Start);
+        }
+
         
         private void onEmployeeTypeSelected(List<Core.Models.Employee> employees)
         {
