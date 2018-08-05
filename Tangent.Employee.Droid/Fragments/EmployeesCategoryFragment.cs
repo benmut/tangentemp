@@ -21,8 +21,9 @@ namespace Tangent.Employee.Droid.Fragments
         readonly string TAG = typeof(EmployeesCategoryFragment).FullName;
 
         List<Core.Models.Employee> _employees;
-
         ListView _lvEmployees;
+
+        Action<Core.Models.Employee> _employeeSelectHandler = delegate { };
 
         public override void OnCreate(Bundle savedInstanceState)
         {
@@ -30,11 +31,11 @@ namespace Tangent.Employee.Droid.Fragments
 
         }
 
-        public static Fragment NewInstance(List<Core.Models.Employee> employees)
+        public static Fragment NewInstance(List<Core.Models.Employee> employees, Action<Core.Models.Employee> onEmployeeSeleced)
         {
             var fragment = new EmployeesCategoryFragment();
             fragment._employees = employees;
-
+            fragment._employeeSelectHandler = onEmployeeSeleced;
             return fragment;
         }
 
@@ -58,6 +59,8 @@ namespace Tangent.Employee.Droid.Fragments
 
         void ListView_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
         {
+            var employee = _employees[e.Position];
+            _employeeSelectHandler(employee);
         }
 
     }
