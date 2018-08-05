@@ -14,7 +14,7 @@ using Tangent.Employee.Droid.Utils;
 
 namespace Tangent.Employee.Droid.Activities
 {
-    [Activity(Label = "LoginActivity", MainLauncher = true, Theme = "@style/AppTheme.NoActionBar")]
+    [Activity(Label = "My Employees", MainLauncher = true, Theme = "@style/AppTheme.NoActionBar")]
     public class LoginActivity : AppCompatActivity
     {
         static readonly string TAG = typeof(LoginActivity).Name;
