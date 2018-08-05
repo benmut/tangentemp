@@ -117,6 +117,7 @@
     <Compile Include="Fragments\ReviewsFragment.cs" />
     <Compile Include="Adapters\ReviewAdapter.cs" />
     <Compile Include="Fragments\ReviewDetailsFragment.cs" />
+    <Compile Include="Fragments\UserProfileFragment.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -145,6 +146,8 @@
     <AndroidResource Include="Resources\layout\item_review.axml" />
     <AndroidResource Include="Resources\drawable\right_grey_arrow.png" />
     <AndroidResource Include="Resources\layout\fragment_review_details.axml" />
+    <AndroidResource Include="Resources\layout\fragment_profile.axml" />
+    <AndroidResource Include="Resources\drawable\empty_image.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\mipmap-hdpi\" />
