@@ -24,6 +24,7 @@ namespace Tangent.Employee.Droid.Activities
         Button _btnLogin;
 
         IUserService _userService;
+        IProfileService _profileService;
 
         private static Container Container
         {
@@ -39,6 +40,7 @@ namespace Tangent.Employee.Droid.Activities
             SetContentView(Resource.Layout.activity_login);
 
             _userService = Container.GetInstance<UserService>();
+            _profileService = Container.GetInstance<ProfileService>();
 
             _etUserName = FindViewById<EditText>(Resource.Id.et_username);
             _etUserPassword = FindViewById<EditText>(Resource.Id.et_password);
@@ -92,6 +94,7 @@ namespace Tangent.Employee.Droid.Activities
 
             if(!string.IsNullOrEmpty(accessToken))
             {
+                UserProfileSingleton.Instance.SetUserProfile(await _profileService.GetUserProfile(accessToken));
                 progressDialog.Dismiss();
 
                 // Save Token to Shared preferences
