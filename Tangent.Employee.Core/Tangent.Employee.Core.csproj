@@ -41,6 +41,9 @@
     <Compile Include="Models\DashboardItem.cs" />
     <Compile Include="Services\Interface\IProfileService.cs" />
     <Compile Include="Services\Implementation\ProfileService.cs" />
+    <Compile Include="Models\UserProfile.cs" />
+    <Compile Include="Models\NextOfKin.cs" />
+    <Compile Include="Models\Review.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
