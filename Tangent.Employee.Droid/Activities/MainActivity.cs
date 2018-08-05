@@ -102,7 +102,13 @@ namespace Tangent.Employee.Droid
         
         private void onEmployeeTypeSelected(List<Core.Models.Employee> employees)
         {
-            Fragment fragment = EmployeesCategoryFragment.NewInstance(employees);
+            Fragment fragment = EmployeesCategoryFragment.NewInstance(employees, onEmployeeSelected);
+            ReplaceFragment(fragment);
+        }
+
+        private void onEmployeeSelected(Core.Models.Employee employee)
+        {
+            Fragment fragment = EmployeeDetailsFragment.NewInstance(employee);
             ReplaceFragment(fragment);
         }
 

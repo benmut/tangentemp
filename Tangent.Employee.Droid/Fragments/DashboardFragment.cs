@@ -33,7 +33,6 @@ namespace Tangent.Employee.Droid.Fragments
 
         Action<List<Core.Models.Employee>> _employeeSelectHandler = delegate { };
         Action<List<Review>> _reviewSelectHandler = delegate { };
-        //internal List<Review> _reviews;
 
         public override void OnCreate(Bundle savedInstanceState)
         {
