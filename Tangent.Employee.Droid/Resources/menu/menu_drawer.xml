@@ -5,6 +5,9 @@
     <item
         android:id="@+id/nav_dashboard"
         android:title="Dashboard" />
+    <item
+        android:id="@+id/my_profile"
+        android:title="My profile" />
   </group>
   <item android:title="Settings">
     <menu>

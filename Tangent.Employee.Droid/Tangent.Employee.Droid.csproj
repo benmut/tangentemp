@@ -113,6 +113,10 @@
     <Compile Include="Fragments\EmployeeDetailsFragment.cs" />
     <Compile Include="Fragments\EmployeesCategoryFragment.cs" />
     <Compile Include="Adapters\EmployeeCategoryAdapter.cs" />
+    <Compile Include="Utils\UserProfileSingleton.cs" />
+    <Compile Include="Fragments\ReviewsFragment.cs" />
+    <Compile Include="Adapters\ReviewAdapter.cs" />
+    <Compile Include="Fragments\ReviewDetailsFragment.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -137,6 +141,10 @@
     <AndroidResource Include="Resources\layout\fragment_employee_details.axml" />
     <AndroidResource Include="Resources\layout\fragment_employees_category.axml" />
     <AndroidResource Include="Resources\layout\item_employee_category.axml" />
+    <AndroidResource Include="Resources\layout\fragment_reviews.axml" />
+    <AndroidResource Include="Resources\layout\item_review.axml" />
+    <AndroidResource Include="Resources\drawable\right_grey_arrow.png" />
+    <AndroidResource Include="Resources\layout\fragment_review_details.axml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\mipmap-hdpi\" />
