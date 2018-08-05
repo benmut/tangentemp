@@ -13,6 +13,7 @@ using Tangent.Employee.Core.Services.Interface;
 using System;
 using Tangent.Employee.Core.Services.Implementation;
 using System.Collections.Generic;
+using Tangent.Employee.Core.Models;
 
 namespace Tangent.Employee.Droid
 {
@@ -50,10 +51,8 @@ namespace Tangent.Employee.Droid
 
             SupportFragmentManager
                 .BeginTransaction()
-                .Replace(Resource.Id.maincontent, DashboardFragment.NewInstance(_employeeService, OnTileSelected))
+                .Replace(Resource.Id.maincontent, DashboardFragment.NewInstance(_employeeService, onEmployeeTypeSelected, onReviewTileSelected))
                 .Commit();
-
-            //ReplaceFragment(DashboardFragment.NewInstance(_employeeService, OnTileSelected));
         }
 
         private void IocContainterGetInstances()
@@ -73,10 +72,22 @@ namespace Tangent.Employee.Droid
             _drawer.AddDrawerListener(_drawerToggle);
             _drawerToggle.SyncState(); 
         }
-
-        private void OnTileSelected(List<Core.Models.Employee> employees)
+        
+        private void onEmployeeTypeSelected(List<Core.Models.Employee> employees)
         {
             Fragment fragment = EmployeesCategoryFragment.NewInstance(employees);
+            ReplaceFragment(fragment);
+        }
+
+        private void onReviewTileSelected(List<Review> reviews)
+        {
+            Fragment fragment = ReviewsFragment.NewInstance(reviews, onReviewSelected);
+            ReplaceFragment(fragment);
+        }
+
+        private void onReviewSelected(Review review)
+        {
+            Fragment fragment = ReviewDetailsFragment.NewInstance(review);
             ReplaceFragment(fragment);
         }
 

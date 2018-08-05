@@ -38,6 +38,7 @@ namespace Tangent.Employee.Droid.Application
             // 2. Configure the container
             Container.Register<IUserService, UserService>(Lifestyle.Singleton);
             Container.Register<IEmployeeService, EmployeeService>(Lifestyle.Singleton);
+            Container.Register<IProfileService, ProfileService>(Lifestyle.Singleton);
 
             // 3. Verify your configuration
             Container.Verify();
