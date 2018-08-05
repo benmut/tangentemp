@@ -31,18 +31,21 @@ namespace Tangent.Employee.Droid.Fragments
         List<DashboardItem> _items;
         Dictionary<string, List<Core.Models.Employee>> _employeeDictionary;
 
-        Action<List<Core.Models.Employee>> _tileSelectHandler = delegate { };
+        Action<List<Core.Models.Employee>> _employeeSelectHandler = delegate { };
+        Action<List<Review>> _reviewSelectHandler = delegate { };
+        //internal List<Review> _reviews;
 
         public override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
         }
 
-        public static Fragment NewInstance(IEmployeeService employeeService, Action<List<Core.Models.Employee>> onTileSelected)
+        public static Fragment NewInstance(IEmployeeService employeeService, Action<List<Core.Models.Employee>> onEmployeeTypeSelected, Action<List<Review>> onReviewTileSelected)
         {
             var fragment = new DashboardFragment();
             fragment._employeeService = employeeService;
-            fragment._tileSelectHandler = onTileSelected;
+            fragment._employeeSelectHandler = onEmployeeTypeSelected;
+            fragment._reviewSelectHandler = onReviewTileSelected;
             return fragment;
         }
 
@@ -84,11 +87,11 @@ namespace Tangent.Employee.Droid.Fragments
 
             _employeeDictionary.Add("Employees", employees.ToList());
             _employeeDictionary.Add("Birthdays", birthdays.ToList());
-            _employeeDictionary.Add("Males", males.ToList());
-            _employeeDictionary.Add("Females", females.ToList());
+            _employeeDictionary.Add("Project Managers", projectManagers.ToList());
             _employeeDictionary.Add("Front-end Developers", frontEnds.ToList());
             _employeeDictionary.Add("Back-end Developers", backEnds.ToList());
-            _employeeDictionary.Add("Project Managers", projectManagers.ToList());
+            _employeeDictionary.Add("Males", males.ToList());
+            _employeeDictionary.Add("Females", females.ToList());
 
             for (int i = 0; i < _employeeDictionary.Count; i++)
             {
@@ -100,6 +103,12 @@ namespace Tangent.Employee.Droid.Fragments
                     Value = _employeeDictionary[_key].Count.ToString()
                 });
             }
+
+            _items.Add(new DashboardItem 
+            {
+                Name = "Reviews", 
+                Value = UserProfileSingleton.Instance.GetUserProfile().Review.Count.ToString()
+            });
 
             _pbLoadingIndicator.Visibility = ViewStates.Gone;
 
@@ -116,14 +125,21 @@ namespace Tangent.Employee.Droid.Fragments
         public override void OnDetach()
         {
             base.OnDetach();
-            _tileSelectHandler = null;
+            _employeeSelectHandler = null;
         }
 
         void GridView_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
         {
+            if(e.Position == 7)
+            {
+                var review = UserProfileSingleton.Instance.GetUserProfile().Review;
+                _reviewSelectHandler(review);
+                return;
+            }
+
             var key = _employeeDictionary.ElementAt(e.Position).Key;
             var employees = _employeeDictionary[key];
-            _tileSelectHandler(employees);
+            _employeeSelectHandler(employees);
         }
 
         void ShowErrorDialog()
